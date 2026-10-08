@@ -1,0 +1,2 @@
+/usr/bin/ar qc libreliable_udp.a CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o
+/usr/bin/ranlib libreliable_udp.a
