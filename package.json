@@ -1,0 +1,13 @@
+{
+  "name": "reliable-udp-full-stack-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Web interface for the reliable UDP transport",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

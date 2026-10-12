@@ -12,3 +12,5 @@ target_link_libraries(reliable_udp PRIVATE pthread)
 add_executable(reliable_udp_demo demo.cpp)
 target_link_libraries(reliable_udp_demo PRIVATE reliable_udp)
 
+add_executable(udp_bridge udp_bridge.cpp)
+target_link_libraries(udp_bridge PRIVATE reliable_udp)

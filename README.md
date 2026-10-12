@@ -1,20 +1,43 @@
-# Reliable UDP transport
+# Reliable UDP Transport
 
-This is a small C++17 teaching implementation of reliable delivery over raw
-UDP. It provides:
+**Full-stack C++17/Node.js networking project implementing reliable, ordered message delivery on top of raw UDP.**
 
-- 32-bit sequence numbers and cumulative ACKs
-- in-order reassembly with a bounded out-of-order receive window
-- retransmission after a 120 ms timeout
-- a congestion window with additive growth and multiplicative decrease
-- application messages split into MTU-sized fragments
-- an FNV-1a checksum to discard corrupted datagrams
+This project demonstrates end-to-end systems engineering by adding
+reliability, sequencing, flow control, congestion control, integrity checks,
+and message framing to connectionless UDP, then exposing the transport through
+a browser-based WebSocket application.
 
-The transport intentionally omits encryption, peer authentication, NAT
-traversal, and production-grade RTT estimation. UDP loss can be simulated with
-`tc`, `dummynet`, or a proxy to observe retransmission and congestion behavior.
+## Resume highlights
+
+- Designed a reliable transport protocol with 32-bit sequence numbers,
+  cumulative acknowledgements, bounded out-of-order buffering, and in-order
+  message reassembly.
+- Implemented retransmission with a fixed 120 ms timeout and congestion control
+  using additive increase and multiplicative decrease.
+- Added MTU-aware fragmentation and explicit message-boundary framing so
+  application messages can span multiple datagrams.
+- Defined and implemented a compact 22-byte binary wire header containing
+  protocol metadata, receive-window advertisement, payload length, and an
+  FNV-1a integrity checksum.
+- Built a command-line client/server demo and a small reusable endpoint library
+  with CMake and compiler warnings enabled.
+- Integrated the C++ transport with an Express/WebSocket service and a
+  responsive browser client, creating a complete browser-to-UDP data path.
+
+## Technical focus
+
+`C++17` · `UDP sockets` · `network protocols` · `binary serialization` ·
+`retransmission` · `congestion control` · `flow control` · `CMake` ·
+`Linux/macOS networking APIs` · `Node.js` · `Express` · `WebSocket` · `HTML/CSS/JavaScript`
 
 ## Build
+
+Requirements: CMake 3.16 or newer, a C++17-compatible compiler, and Node.js
+18 or newer for the web demo. On macOS with Homebrew, install Node.js with:
+
+```sh
+brew install node
+```
 
 ```sh
 cmake -S . -B build
@@ -23,41 +46,71 @@ cmake --build build
 
 ## Run the demo
 
-In one terminal:
+Start the server in one terminal:
 
 ```sh
 ./build/reliable_udp_demo server 9000
 ```
 
-In another:
+Connect with the client from another terminal:
 
 ```sh
 ./build/reliable_udp_demo client 127.0.0.1 9000
 ```
 
-Type lines into the client. Each line is delivered reliably and the server
-returns an acknowledgement message.
+Type lines into the client. The transport fragments, transmits, acknowledges,
+reassembles, and delivers each message reliably; the server responds with an
+acknowledgement.
 
-## Wire format
+## Full-stack web demo
 
-Every datagram has a 22-byte header: magic, version, packet type, sequence
-number, cumulative acknowledgement, advertised receive window, payload
-length, and checksum. Data packets use one sequence number per fragment.
-An empty data packet terminates an application message, allowing the receiver
-to distinguish message boundaries without adding an application framing API.
+Run these commands from the repository root (`UDP Transport`), not from the
+`build` directory:
 
-## Limitations and future work
+Install the web dependencies:
 
-This project intentionally favors clear transport concepts over production
-features:
+```sh
+npm install
+```
 
-- The retransmission timeout is fixed at 120 ms rather than using adaptive RTT
-  estimation. Real TCP and QUIC measure round-trip time continuously and
-  adjust their timeout accordingly.
-- Packets are not encrypted and peers are not authenticated. A production
-  transport would need authenticated encryption and a key-exchange strategy.
-- The demo supports one connected peer at a time rather than managing many
-  concurrent peers under load.
-- No benchmark suite is included yet. A useful next step would be to measure
-  throughput and latency under induced packet loss, producing concrete results
-  such as recovery time at a given loss percentage.
+Start the UDP server in one terminal:
+
+```sh
+./build/reliable_udp_demo server 9000
+```
+
+Start the web application in another:
+
+```sh
+npm start
+```
+
+Open <http://localhost:3000>. The browser sends JSON messages over WebSocket
+to the Node.js server, which starts a C++ `udp_bridge` process for the session.
+The bridge uses the reusable `reliable_udp` library to deliver each message
+over UDP and return the acknowledgement to the browser.
+
+The web app can target a different UDP server with environment variables:
+
+```sh
+UDP_HOST=127.0.0.1 UDP_PORT=9000 npm start
+```
+
+## Protocol design
+
+Each datagram contains a 22-byte header with the magic value, protocol
+version, packet type, sequence number, cumulative acknowledgement, advertised
+receive window, payload length, and checksum. Data packets use one sequence
+number per fragment. An empty data packet terminates each application message,
+allowing the receiver to preserve message boundaries without exposing
+transport framing details to callers.
+
+## Scope and future improvements
+
+This is an educational transport implementation focused on clear protocol
+mechanics rather than production deployment. Potential next steps include:
+
+- adaptive RTT measurement and retransmission timeouts;
+- authenticated encryption and peer authentication;
+- support for multiple concurrent peers;
+- automated loss-injection tests and throughput/latency benchmarks.
