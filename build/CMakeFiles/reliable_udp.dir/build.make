@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects"
+CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/build"
+CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/reliable_udp.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/reliable_udp.dir/codegen:
 .PHONY : CMakeFiles/reliable_udp.dir/codegen
 
 CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o: CMakeFiles/reliable_udp.dir/flags.make
-CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o: /Users/kofoojo/Documents/Personal\ Projects/reliable_udp.cpp
+CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o: /Users/kofoojo/Documents/Personal\ Projects/UDP\ Transport/reliable_udp.cpp
 CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o: CMakeFiles/reliable_udp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o -MF CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o.d -o CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o -c "/Users/kofoojo/Documents/Personal Projects/reliable_udp.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o -MF CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o.d -o CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o -c "/Users/kofoojo/Documents/Personal Projects/UDP Transport/reliable_udp.cpp"
 
 CMakeFiles/reliable_udp.dir/reliable_udp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reliable_udp.dir/reliable_udp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/kofoojo/Documents/Personal Projects/reliable_udp.cpp" > CMakeFiles/reliable_udp.dir/reliable_udp.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/kofoojo/Documents/Personal Projects/UDP Transport/reliable_udp.cpp" > CMakeFiles/reliable_udp.dir/reliable_udp.cpp.i
 
 CMakeFiles/reliable_udp.dir/reliable_udp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reliable_udp.dir/reliable_udp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/kofoojo/Documents/Personal Projects/reliable_udp.cpp" -o CMakeFiles/reliable_udp.dir/reliable_udp.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/kofoojo/Documents/Personal Projects/UDP Transport/reliable_udp.cpp" -o CMakeFiles/reliable_udp.dir/reliable_udp.cpp.s
 
 # Object files for target reliable_udp
 reliable_udp_OBJECTS = \
@@ -96,7 +96,7 @@ reliable_udp_EXTERNAL_OBJECTS =
 libreliable_udp.a: CMakeFiles/reliable_udp.dir/reliable_udp.cpp.o
 libreliable_udp.a: CMakeFiles/reliable_udp.dir/build.make
 libreliable_udp.a: CMakeFiles/reliable_udp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libreliable_udp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libreliable_udp.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/reliable_udp.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/reliable_udp.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/reliable_udp.dir/clean:
 .PHONY : CMakeFiles/reliable_udp.dir/clean
 
 CMakeFiles/reliable_udp.dir/depend:
-	cd "/Users/kofoojo/Documents/Personal Projects/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/kofoojo/Documents/Personal Projects" "/Users/kofoojo/Documents/Personal Projects" "/Users/kofoojo/Documents/Personal Projects/build" "/Users/kofoojo/Documents/Personal Projects/build" "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles/reliable_udp.dir/DependInfo.cmake" "--color=$(COLOR)" reliable_udp
+	cd "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/kofoojo/Documents/Personal Projects/UDP Transport" "/Users/kofoojo/Documents/Personal Projects/UDP Transport" "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build" "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build" "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles/reliable_udp.dir/DependInfo.cmake" "--color=$(COLOR)" reliable_udp
 .PHONY : CMakeFiles/reliable_udp.dir/depend
 

@@ -54,10 +54,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects"
+CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/build"
+CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/build"
 # The main recursive "all" target.
 all: CMakeFiles/reliable_udp.dir/all
 all: CMakeFiles/reliable_udp_demo.dir/all
+all: CMakeFiles/udp_bridge.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/reliable_udp.dir/codegen
 codegen: CMakeFiles/reliable_udp_demo.dir/codegen
+codegen: CMakeFiles/udp_bridge.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/reliable_udp.dir/clean
 clean: CMakeFiles/reliable_udp_demo.dir/clean
+clean: CMakeFiles/udp_bridge.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -88,14 +91,14 @@ clean: CMakeFiles/reliable_udp_demo.dir/clean
 CMakeFiles/reliable_udp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp.dir/build.make CMakeFiles/reliable_udp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp.dir/build.make CMakeFiles/reliable_udp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=1,2 "Built target reliable_udp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=1,2 "Built target reliable_udp"
 .PHONY : CMakeFiles/reliable_udp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/reliable_udp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/reliable_udp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 0
 .PHONY : CMakeFiles/reliable_udp.dir/rule
 
 # Convenience name for target.
@@ -105,7 +108,7 @@ reliable_udp: CMakeFiles/reliable_udp.dir/rule
 # codegen rule for target.
 CMakeFiles/reliable_udp.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp.dir/build.make CMakeFiles/reliable_udp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target reliable_udp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target reliable_udp"
 .PHONY : CMakeFiles/reliable_udp.dir/codegen
 
 # clean rule for target.
@@ -120,14 +123,14 @@ CMakeFiles/reliable_udp.dir/clean:
 CMakeFiles/reliable_udp_demo.dir/all: CMakeFiles/reliable_udp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp_demo.dir/build.make CMakeFiles/reliable_udp_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp_demo.dir/build.make CMakeFiles/reliable_udp_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=3,4 "Built target reliable_udp_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=3,4 "Built target reliable_udp_demo"
 .PHONY : CMakeFiles/reliable_udp_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/reliable_udp_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/reliable_udp_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 0
 .PHONY : CMakeFiles/reliable_udp_demo.dir/rule
 
 # Convenience name for target.
@@ -137,13 +140,45 @@ reliable_udp_demo: CMakeFiles/reliable_udp_demo.dir/rule
 # codegen rule for target.
 CMakeFiles/reliable_udp_demo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp_demo.dir/build.make CMakeFiles/reliable_udp_demo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" --progress-num=3,4 "Finished codegen for target reliable_udp_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=3,4 "Finished codegen for target reliable_udp_demo"
 .PHONY : CMakeFiles/reliable_udp_demo.dir/codegen
 
 # clean rule for target.
 CMakeFiles/reliable_udp_demo.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp_demo.dir/build.make CMakeFiles/reliable_udp_demo.dir/clean
 .PHONY : CMakeFiles/reliable_udp_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/udp_bridge.dir
+
+# All Build rule for target.
+CMakeFiles/udp_bridge.dir/all: CMakeFiles/reliable_udp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=5,6 "Built target udp_bridge"
+.PHONY : CMakeFiles/udp_bridge.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/udp_bridge.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/udp_bridge.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 0
+.PHONY : CMakeFiles/udp_bridge.dir/rule
+
+# Convenience name for target.
+udp_bridge: CMakeFiles/udp_bridge.dir/rule
+.PHONY : udp_bridge
+
+# codegen rule for target.
+CMakeFiles/udp_bridge.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" --progress-num=5,6 "Finished codegen for target udp_bridge"
+.PHONY : CMakeFiles/udp_bridge.dir/codegen
+
+# clean rule for target.
+CMakeFiles/udp_bridge.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/clean
+.PHONY : CMakeFiles/udp_bridge.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

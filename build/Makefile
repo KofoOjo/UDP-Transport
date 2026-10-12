@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects"
+CMAKE_SOURCE_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/build"
+CMAKE_BINARY_DIR = "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" "/Users/kofoojo/Documents/Personal Projects/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,19 @@ reliable_udp_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp_demo.dir/build.make CMakeFiles/reliable_udp_demo.dir/build
 .PHONY : reliable_udp_demo/fast
 
+#=============================================================================
+# Target rules for targets named udp_bridge
+
+# Build rule for target.
+udp_bridge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udp_bridge
+.PHONY : udp_bridge
+
+# fast build rule for target.
+udp_bridge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/build
+.PHONY : udp_bridge/fast
+
 demo.o: demo.cpp.o
 .PHONY : demo.o
 
@@ -190,6 +203,30 @@ reliable_udp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reliable_udp.dir/build.make CMakeFiles/reliable_udp.dir/reliable_udp.cpp.s
 .PHONY : reliable_udp.cpp.s
 
+udp_bridge.o: udp_bridge.cpp.o
+.PHONY : udp_bridge.o
+
+# target to build an object file
+udp_bridge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/udp_bridge.cpp.o
+.PHONY : udp_bridge.cpp.o
+
+udp_bridge.i: udp_bridge.cpp.i
+.PHONY : udp_bridge.i
+
+# target to preprocess a source file
+udp_bridge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/udp_bridge.cpp.i
+.PHONY : udp_bridge.cpp.i
+
+udp_bridge.s: udp_bridge.cpp.s
+.PHONY : udp_bridge.s
+
+# target to generate assembly for a file
+udp_bridge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_bridge.dir/build.make CMakeFiles/udp_bridge.dir/udp_bridge.cpp.s
+.PHONY : udp_bridge.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +237,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... reliable_udp"
 	@echo "... reliable_udp_demo"
+	@echo "... udp_bridge"
 	@echo "... demo.o"
 	@echo "... demo.i"
 	@echo "... demo.s"
 	@echo "... reliable_udp.o"
 	@echo "... reliable_udp.i"
 	@echo "... reliable_udp.s"
+	@echo "... udp_bridge.o"
+	@echo "... udp_bridge.i"
+	@echo "... udp_bridge.s"
 .PHONY : help
 
 

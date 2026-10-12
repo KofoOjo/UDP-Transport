@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/Users/kofoojo/Documents/Personal Projects/CMakeLists.txt"
+  "/Users/kofoojo/Documents/Personal Projects/UDP Transport/CMakeLists.txt"
   "CMakeFiles/4.4.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.4/CMakeSystem.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -50,4 +50,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/reliable_udp.dir/DependInfo.cmake"
   "CMakeFiles/reliable_udp_demo.dir/DependInfo.cmake"
+  "CMakeFiles/udp_bridge.dir/DependInfo.cmake"
   )

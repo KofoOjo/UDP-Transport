@@ -1,7 +1,7 @@
 CMakeFiles/reliable_udp_demo.dir/demo.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json \
-  /Users/kofoojo/Documents/Personal\ Projects/demo.cpp \
-  /Users/kofoojo/Documents/Personal\ Projects/reliable_udp.hpp \
+  /Users/kofoojo/Documents/Personal\ Projects/UDP\ Transport/demo.cpp \
+  /Users/kofoojo/Documents/Personal\ Projects/UDP\ Transport/reliable_udp.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

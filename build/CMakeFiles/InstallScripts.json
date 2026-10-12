@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/kofoojo/Documents/Personal Projects/build/cmake_install.cmake"
+		"/Users/kofoojo/Documents/Personal Projects/UDP Transport/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
